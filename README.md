@@ -14,12 +14,12 @@ Program ini dibuat untuk memanipulasi warna gambar dan video real-time dengan ca
 ### B. Output
 #### 1. Gambar Statis
 Membuka beberapa jendela terpisah secara bersamaan yang menampilkan gambar asli (aoka_coklat.jpeg), versi hitam-putih, hingga hasil filter modifikasi warna (Biru, Hijau, Kuning, dan Merah).
-<img width="1000" height="851" alt="opencv_output_statis" src="https://github.com/user-attachments/assets/6f7c2d2d-b68b-4ec7-be8c-786cdd8365b8" />
+<img width="1000" height="500" alt="opencv_output_statis" src="https://github.com/user-attachments/assets/6f7c2d2d-b68b-4ec7-be8c-786cdd8365b8" />
 
 
 #### 2. Live Webcam
 Membuka jendela video tangkapan kamera secara real-time yang warnanya berubah-ubah otomatis sesuai filter (jendela terpisah untuk filter merah, hijau, dan kuning) berdasarkan pergerakan di depan kamera.
-<img width="1000" height="856" alt="opencv_output_livecam" src="https://github.com/user-attachments/assets/aa3a9ac8-aa55-4a49-b7cc-b28b09a98b18" />
+<img width="1000" height="500" alt="opencv_output_livecam" src="https://github.com/user-attachments/assets/aa3a9ac8-aa55-4a49-b7cc-b28b09a98b18" />
 
 
 
