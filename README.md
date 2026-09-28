@@ -13,10 +13,10 @@ Program ini dibuat untuk memanipulasi warna gambar dan video real-time dengan ca
 ### B. Output
 #### 1. Gambar Statis
 Membuka beberapa jendela terpisah secara bersamaan yang menampilkan gambar asli (aoka_coklat.jpeg), versi hitam-putih, hingga hasil filter modifikasi warna (Biru, Hijau, Kuning, dan Merah).
-<img width="600" height="400" alt="opencv_output_statis" src="https://github.com/user-attachments/assets/6f7c2d2d-b68b-4ec7-be8c-786cdd8365b8" />
+<img width="928" height="551" alt="opencv_output_statis" src="https://github.com/user-attachments/assets/6f7c2d2d-b68b-4ec7-be8c-786cdd8365b8" />
 #### 2. Live Webcam
 Membuka jendela video tangkapan kamera secara real-time yang warnanya berubah-ubah otomatis sesuai filter (jendela terpisah untuk filter merah, hijau, dan kuning) berdasarkan pergerakan di depan kamera.
-<img width="600" height="400" alt="opencv_output_livecam" src="https://github.com/user-attachments/assets/aa3a9ac8-aa55-4a49-b7cc-b28b09a98b18" />
+<img width="928" height="551" alt="opencv_output_livecam" src="https://github.com/user-attachments/assets/aa3a9ac8-aa55-4a49-b7cc-b28b09a98b18" />
 
 
 
@@ -38,11 +38,29 @@ Program menghitung tabel frekuensi kemunculan setiap nilai piksel, membangun fun
 3. Panel 3 - Transformasi Negatif: Menampilkan hasil pembalikan warna di mana bagian terang menjadi gelap total.
 4. Panel 4 - Hasil Ekualisasi Manual: Menampilkan gambar dengan ketajaman dan kontras lokal yang jauh lebih merata.
 5. Panel 5 & 6 - Perbandingan Grafik Histogram Asli dan Setelah Ekualisasi: Menampilkan perbandingan grafik distribusi intensitas piksel. Histogram asli terlihat tidak merata, sedangkan histogram setelah ekualisasi tersebar lebih luas untuk memaksimalkan detail gambar.
-6. <img width="928" height="551" alt="Figure 2026-09-29 010001" src="https://github.com/user-attachments/assets/2b87a108-1824-42e4-a96f-2f3661422425" />
+<img width="928" height="551" alt="Figure 2026-09-29 010001" src="https://github.com/user-attachments/assets/2b87a108-1824-42e4-a96f-2f3661422425" />
 
 
 
 ## 3-filter-spasial
+Program ini dirancang untuk menerapkan operasi spasial secara manual pada kanal warna tanpa menggunakan fungsi instan filter bawaan OpenCV, lengkap dengan teknik padding agar bagian pinggir gambar tidak rusak.
+
+### A. Cara Kerja Program
+Program memuat file citra berwarna, lalu memprosesnya melalui tiga tahapan filter spasial secara independen di setiap kanal warna:
+#### 1. Filter Smoothing (Mean Blur)
+Menggunakan kernel rata-rata berukuran $7 \times 7$ untuk merata-rata nilai piksel tetangga di sekitar area lokal. Teknik ini berfungsi meredam variasi intensitas yang terlalu tajam dan membuat gambar menjadi lebih halus (blur)
+#### 2. Filter Sharpening (Penajaman)
+Menggunakan matriks kernel khusus (-1, 5, -1) untuk mempertegas perbedaan intensitas piksel yang saling berdampingan. Proses ini bertujuan menajamkan detail objek, memperjelas garis, dan membuat tekstur pada gambar tampak jauh lebih kontras.
+#### 3. Filter Median
+Menyortir nilai piksel di area lokal secara manual menggunakan algoritma pengurutan (sorting) untuk mencari nilai tengahnya. Filter ini sangat efektif membersihkan derau (noise) acak tanpa mengorbankan ketajaman tepi objek utama.
+
+### B. Output
+Hasil eksekusi program ini menampilkan satu jendela grid berisi 4 panel perbandingan citra:
+1. Panel 1 - Citra Asli: Menampilkan gambar masukan awal (rooftop_view.jpeg) dalam format warna RGB.
+2. Panel 2 - Filter Smoothing: Menampilkan hasil gambar yang tampak lebih kabur/halus karena perataan nilai piksel tetangga.
+3. Panel 3 - Filter Sharpening: Menampilkan hasil gambar dengan detail garis, tepi bangunan, dan tekstur yang menjadi jauh lebih tegas dan tajam.
+4. Panel 4 - Filter Median: Menampilkan hasil pembersihan citra menggunakan nilai tengah piksel lokal, menjaga kualitas visual agar tetap bersih dan natural.
+<img width="598" height="569" alt="Figure 2026-09-29 010848" src="https://github.com/user-attachments/assets/b2fcdc0b-7cc1-4e7a-bad5-299b40bfa074" />
 
 
 
