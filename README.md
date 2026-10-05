@@ -1,4 +1,4 @@
-# PCV ASSIGNMENTS
+<img width="1521" height="849" alt="image" src="https://github.com/user-attachments/assets/71770ef6-137c-449b-8c9d-680c559ff738" /># PCV ASSIGNMENTS
 ## 1-Intro.py 
 Program ini dibuat untuk memanipulasi warna gambar dan video real-time dengan cara memisahkan serta menggabungkan kanal warna dasar (Merah, Hijau, Biru) menggunakan OpenCV dan NumPy.
 
@@ -64,5 +64,23 @@ Hasil eksekusi program ini menampilkan satu jendela grid berisi 4 panel perbandi
 
 
 
+## 4-model-warna
+Kode ini akan membaca sebuah citra digital dan melakukan konversi ruang warna secara simultan ke dalam empat model warna utama: RGB, HSV, HSI, dan CMYK.
 
+### A. Cara Kerja Program
+Program memuat file citra digital, lalu memprosesnya melalui beberapa tahapan konversi matematis dan fungsi pustaka standar:
+#### 1. Konversi Ke Ruang Warna HSV
+Menggunakan fungsi bawaan pustaka OpenCV (cv2.cvtColor) untuk mengubah format warna standar BGR ke dalam model HSV (Hue, Saturation, Value), yang memisahkan informasi warna dasar (Hue) dari aspek pencahayaan.
+#### 2. Konversi ke Ruang Warna HSI
+Mengekstrak kanal warna RGB, melakukan normalisasi rentang piksel, lalu menghitung komponen Intensity (rata-rata intensitas), Saturation (tingkat kejenuhan), dan Hue (sudut warna menggunakan perhitungan trigonometri berbasis matriks) secara manual.
+#### 3. Konversi ke Ruang Warna CMYK
+Mengonversi nilai piksel RGB ke model warna subtraktif cetak dengan mencari nilai maksimum untuk mengekstrak komponen kunci Key / Hitam ($K$), lalu menurunkan nilai komponen Cyan, Magenta, dan Yellow.
+
+### B. Output
+Hasil eksekusi program ini menampilkan satu jendela grid berisi 4 panel perbandingan citra:
+1. Panel 1 - RGB (Asli): Menampilkan gambar masukan awal (dana_masuk.png) dalam format warna standar RGB.
+2. Panel 2 - HSV: Menampilkan hasil konversi ke ruang warna HSV dengan pergeseran tampilan visual akibat pemisahan kanal kecerahan dan warna dasar.
+3. Panel 3 - HSI: Menampilkan hasil konversi ruang warna HSI berdasarkan perhitungan manual intensitas dan sudut hue.
+4. Panel 4 - CMYK: Menampilkan kanal komponen hitam (Key/K) dari model CMYK dalam bentuk citra grayscale untuk melihat distribusi elemen gelap pada gambar.
+<img width="1521" height="849" alt="image" src="https://github.com/user-attachments/assets/b47f8206-3ff5-4f3e-becc-a8b678812ae7" />
 
