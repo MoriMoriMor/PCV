@@ -1,4 +1,4 @@
-<img width="1521" height="849" alt="image" src="https://github.com/user-attachments/assets/71770ef6-137c-449b-8c9d-680c559ff738" /># PCV ASSIGNMENTS
+# PCV ASSIGNMENTS
 ## 1-Intro.py 
 Program ini dibuat untuk memanipulasi warna gambar dan video real-time dengan cara memisahkan serta menggabungkan kanal warna dasar (Merah, Hijau, Biru) menggunakan OpenCV dan NumPy.
 
